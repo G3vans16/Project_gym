@@ -1,6 +1,6 @@
-DROP TABLE registers
-DROP TABLE members
-DROP TABLE gym_classes
+DROP TABLE registers;
+DROP TABLE members;
+DROP TABLE gym_classes;
 
 CREATE TABLE members (
     id SERIAL PRIMARY KEY,
