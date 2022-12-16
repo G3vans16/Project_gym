@@ -37,7 +37,7 @@ def delete_all():
 
 def members_for_gym_class(gym_class):
     members = []
-    sql = "SELECT members.* FROM members INNER JOIN registers ON registers.member_id = members.id WHERE gym_class_id = %s"
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE gym_class_id = %s"
     values = [gym_class.id]
     results = run_sql(sql, values)
 
@@ -46,9 +46,9 @@ def members_for_gym_class(gym_class):
         members.append(member)
     return members
 
-def member_for_register(register):
+def member_for_booking(booking):
     sql = "SELECT * FROM members WHERE id = %s"
-    values = [register.member.id]
+    values = [booking.member.id]
     results = run_sql(sql, values)[0]
     member = Member(results['first_name'], results['last_name'], results['age'], results['id'])
     return member

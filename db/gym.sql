@@ -1,4 +1,4 @@
-DROP TABLE registers;
+DROP TABLE bookings;
 DROP TABLE members;
 DROP TABLE gym_classes;
 
@@ -15,7 +15,7 @@ CREATE TABLE gym_classes (
     description TEXT
 );
 
-CREATE TABLE registers (
+CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
     member_id INT REFERENCES members(id) ON DELETE CASCADE,
     gym_class_id INT REFERENCES gym_classes(id) ON DELETE CASCADE

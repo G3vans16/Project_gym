@@ -1,13 +1,13 @@
 import pdb
 from models.gym_class import GymClass
 from models.member import Member
-from models.register import Register
+from models.booking import Booking
 
 import repositories.member_repository as member_repository
 import repositories.gym_class_repository as gym_class_repository
-import repositories.register_repository as register_repository
+import repositories.booking_repository as booking_repository
 
-register_repository.delete_all()
+booking_repository.delete_all()
 gym_class_repository.delete_all()
 member_repository.delete_all()
 
@@ -29,14 +29,14 @@ gym_class_repository.save(gym_class2)
 gym_class3 = GymClass("Pilates", "literally don't know what this is")
 gym_class_repository.save(gym_class3)
 
-register1 = Register(member1, gym_class1)
-register_repository.save(register1)
+booking1 = Booking(member1, gym_class1)
+booking_repository.save(booking1)
 
-register2 = Register(member2, gym_class2)
-register_repository.save(register2)
+booking2 = Booking(member2, gym_class2)
+booking_repository.save(booking2)
 
-register3 = Register(member3, gym_class3)
-register_repository.save(register3)
+booking3 = Booking(member3, gym_class3)
+booking_repository.save(booking3)
 
-register4 = Register(member3, gym_class1)
-register_repository.save(register4)
+booking4 = Booking(member3, gym_class1)
+booking_repository.save(booking4)

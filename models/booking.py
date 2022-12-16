@@ -1,4 +1,4 @@
-class Register:
+class Booking:
 
     def __init__(self, member, gym_class, id = None):
         self.member = member
