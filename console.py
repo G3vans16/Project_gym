@@ -7,6 +7,10 @@ import repositories.member_repository as member_repository
 import repositories.gym_class_repository as gym_class_repository
 import repositories.register_repository as register_repository
 
+register_repository.delete_all()
+gym_class_repository.delete_all()
+member_repository.delete_all()
+
 member1 = Member("Shauna", "Alexander", 25)
 member_repository.save(member1)
 

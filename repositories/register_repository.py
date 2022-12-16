@@ -12,3 +12,24 @@ def save(register):
     results = run_sql(sql, values)
     register.id = results[0]['id']
     return register
+
+def select_all():
+    registers = []
+    sql = "SELECT * FROM registers"
+    results = run_sql(sql)
+
+    for row in results:
+        member = member_repository.select(row['member_id'])
+        gym_class = gym_class_repository.select(row['gym_class_id'])
+        register = Register(member, gym_class, row['id'])
+        registers.append(register)
+    return registers
+
+def delete_all():
+    sql = "DELETE FROM registers"
+    run_sql(sql)
+
+def delete(id):
+    sql = "DELETE FROM registers WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)
