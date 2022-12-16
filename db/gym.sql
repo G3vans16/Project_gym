@@ -1,0 +1,22 @@
+DROP TABLE registers
+DROP TABLE members
+DROP TABLE gym_classes
+
+CREATE TABLE members (
+    id SERIAL PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    age INT
+);
+
+CREATE TABLE gym_classes (
+    id SERIAL PRIMARY KEY,
+    class_name VARCHAR(255),
+    description TEXT
+);
+
+CREATE TABLE registers (
+    id SERIAL PRIMARY KEY,
+    member_id INT REFERENCES members(id) ON DELETE CASCADE,
+    gym_classes_id INT REFERENCES gym_classes(id) ON DELETE CASCADE
+);
