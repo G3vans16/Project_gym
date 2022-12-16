@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Bookings</h1>
+
+{% for booking in bookings %}
+<div>
+   <p>{{ booking.member.first_name }} {{ booking.member.last_name }} - {{ booking.gym_class.class_name }}</p>
+</div>
+{% endfor %}
+
+{% endblock %}

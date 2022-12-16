@@ -5,3 +5,4 @@ class Member:
         self.last_name = last_name
         self.age = age
         self.id = id
+    

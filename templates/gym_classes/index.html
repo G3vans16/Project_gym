@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Gym Classes</h1>
+
+{% for gym_class in gym_classes %}
+<div>
+    <a href="/gym_classes/{{gym_class.id}}">{{gym_class.class_name}}</a>
+</div>
+{% endfor %}
+
+<div>
+    <a href="/gym_classes/new">Add New Class</a>
+</div>
+
+{% endblock %}

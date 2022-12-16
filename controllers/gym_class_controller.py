@@ -11,8 +11,20 @@ def gym_classes():
     gym_classes = gym_class_repository.select_all()
     return render_template("gym_classes/index.html", gym_classes=gym_classes)
 
-@gym_classes_blueprint.route("gym_classes/<id>")
+@gym_classes_blueprint.route("/gym_classes/<id>")
 def show(id):
     gym_class = gym_class_repository.select(id)
     members = member_repository.members_for_gym_class(gym_class)
     return render_template("gym_classes/show.html", gym_class=gym_class, members=members)
+
+@gym_classes_blueprint.route("/gym_classes/new", methods=['GET'])
+def new_gym_class():
+    return render_template("gym_classes/new.html")
+
+@gym_classes_blueprint.route("/gym_classes",  methods=['POST'])
+def create_gym_class():
+    class_name = request.form['class_name']
+    description = request.form['description']
+    gym_class = GymClass(class_name, description)
+    gym_class_repository.save(gym_class)
+    return redirect('/gym_classes')
