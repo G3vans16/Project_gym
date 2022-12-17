@@ -1,9 +1,7 @@
 {% extends "base.html" %}
-
 {% block content %}
 
-<form action="/members" method="post">
-
+<form action="/members/{{member.id}}" method="post">
   <div>
     <label for="first_name">First Name:</label>
     <input type="text" id="first_name" name="first_name" placeholder="First Name" required autofocus>
@@ -19,8 +17,9 @@
     <input type="text" id="age" name="age" placeholder="Age" required>
   </div>
 
-  <button type="submit">Add Member</button>
+  <button type="submit">Edit Member</button>
 
 </form>
+
 
 {% endblock %}

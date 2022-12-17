@@ -52,3 +52,8 @@ def gym_class_for_booking(booking):
     results = run_sql(sql,values)[0]
     gym_class = GymClass(results['class_name'], results['description'], results['id'])
     return gym_class
+
+def update(gym_class):
+    sql = "UPDATE gym_classes SET (class_name, description) = (%s, %s) WHERE id = %s"
+    values = [gym_class.class_name, gym_class.description, gym_class.id]
+    run_sql(sql, values)

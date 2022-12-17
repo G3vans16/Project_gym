@@ -52,3 +52,8 @@ def member_for_booking(booking):
     results = run_sql(sql, values)[0]
     member = Member(results['first_name'], results['last_name'], results['age'], results['id'])
     return member
+
+def update(member):
+    sql = "UPDATE members SET (first_name, last_name, age) = (%s, %s, %s) WHERE id = %s"
+    values = [member.first_name, member.last_name, member.age, member.id]
+    run_sql(sql, values)
