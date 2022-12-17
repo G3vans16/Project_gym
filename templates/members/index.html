@@ -9,7 +9,8 @@
 </div>
 {% endfor %}
 
-<div>
-    <a href="/members/new">New Member</a>
-</div>
+<form action="/members/new" method="GET">
+    <input type="submit" value="Create Member" />
+  </form>
+
 {% endblock %}

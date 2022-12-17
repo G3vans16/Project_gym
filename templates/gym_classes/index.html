@@ -9,8 +9,8 @@
 </div>
 {% endfor %}
 
-<div>
-    <a href="/gym_classes/new">Add New Class</a>
-</div>
+<form action="/gym_classes/new" method="GET">
+    <input type="submit" value="Add New Class" />
+  </form>
 
 {% endblock %}

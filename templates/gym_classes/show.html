@@ -6,12 +6,19 @@
 
 <p>{{ gym_class.description }}</p>
 
+<h3>Currently Enrolled Members:</h3>
+<ul>
+    {% for member in members  %}
+    <li>{{member.first_name}} {{member.last_name}}</li>
+    {% endfor %}
+</ul>
+
 <form action="/gym_classes/{{gym_class.id}}/edit" method="GET">
-    <input class="btn btn--danger" type="submit" value="edit" />
+    <input class="btn btn--danger" type="submit" value="Edit Class" />
   </form>
 
 <form action="/gym_classes/{{gym_class.id}}/delete" method="POST">
-    <input class="btn btn--danger" type="submit" value="delete" />
+    <input class="btn btn--danger" type="submit" value="Delete Class" />
   </form>
 
 {% endblock %}
