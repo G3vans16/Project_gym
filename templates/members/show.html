@@ -6,5 +6,11 @@
 
 <p>Age: {{ member.age }}</p>
 
-<p><a href="/members/{{member.id}}/edit">Edit Details</a></p>
+<form action="/members/{{member.id}}/edit" method="GET">
+    <input class="btn btn--danger" type="submit" value="edit" />
+  </form>
+
+<form action="/members/{{member.id}}/delete" method="POST">
+    <input class="btn btn--danger" type="submit" value="delete" />
+  </form>
 {% endblock %}

@@ -6,6 +6,12 @@
 
 <p>{{ gym_class.description }}</p>
 
-<p><a href="/gym_classes/{{gym_class.id}}/edit">Edit Details</a></p>
+<form action="/gym_classes/{{gym_class.id}}/edit" method="GET">
+    <input class="btn btn--danger" type="submit" value="edit" />
+  </form>
+
+<form action="/gym_classes/{{gym_class.id}}/delete" method="POST">
+    <input class="btn btn--danger" type="submit" value="delete" />
+  </form>
 
 {% endblock %}
