@@ -1,20 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Bookings</h1>
+<div class="bookings_block">
+<h1 class = "content_head">Bookings</h1>
 
 {% for booking in bookings %}
-<div>
-   <p>{{ booking.member.first_name }} {{ booking.member.last_name }} - {{ booking.gym_class.class_name }}</p>
-</div>
 
-<form action="/bookings/{{ booking.id }}/delete" method="POST">
-    <input type="submit" value="Delete Booking" />
+   <p>{{ booking.member.first_name }} {{ booking.member.last_name }} - {{ booking.gym_class.class_name }}</p>
+
+<form action="/bookings/{{ booking.id }}/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete Booking?');">
+    <input class="content_button" type="submit" value="Delete Booking"/>
   </form>
 
 {% endfor %}
 
-<a href="/bookings/new">Create Booking</a>
-
+<form action="/bookings/new" method="GET">
+    <input class="action_button" type="submit" value="Create Booking"/>
+  </form>
+</div>
 
 {% endblock %}

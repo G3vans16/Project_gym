@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Members</h1>
+<div class="content_block">
+<h1 class="content_head">Members</h1>
 
 {% for member in members %}
-<div>
+
     <a href="/members/{{member.id}}">{{member.first_name}} {{member.last_name}}</a>
-</div>
+
 {% endfor %}
 
 <form action="/members/new" method="GET">
-    <input type="submit" value="Create Member" />
+    <input class ="content_button" type="submit" value="Create Member" />
   </form>
-
+</div>
 {% endblock %}

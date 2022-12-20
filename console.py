@@ -40,3 +40,4 @@ booking_repository.save(booking3)
 
 booking4 = Booking(member3, gym_class1)
 booking_repository.save(booking4)
+

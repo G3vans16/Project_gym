@@ -15,6 +15,7 @@ def gym_classes():
 def show(id):
     gym_class = gym_class_repository.select(id)
     members = member_repository.members_for_gym_class(gym_class)
+    
     return render_template("gym_classes/show.html", gym_class=gym_class, members=members)
 
 @gym_classes_blueprint.route("/gym_classes/new", methods=['GET'])

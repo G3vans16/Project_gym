@@ -2,22 +2,35 @@
 
 {% block content %}
 
+<div class="individual_block">
 <h1>{{member.first_name}} {{member.last_name}}</h1>
 
 <p>Age: {{ member.age }}</p>
 
 <h3>Booked Classes:</h3>
-<ul>
-    {% for gym_class in gym_classes %}
-    <li>{{gym_class.class_name}}</li>
-    {% endfor %}
+
+<ul>{% if gym_classes|length < 1 %}
+    <p>Not currently enrolled in any classes - </p>
+    <a href="/bookings/new">Create Booking?</a>
+    
+    {% else %}
+        {% for gym_class in gym_classes %}
+        <li>{{gym_class.class_name}}</li>
+        {% endfor %}
+    {% endif %}
 </ul>
 
+<div class = edit_delete_buttons>
 <form action="/members/{{member.id}}/edit" method="GET">
-    <input class="btn btn--danger" type="submit" value="Edit Member" />
+    <input class="action_button" type="submit" value="Edit Member" />
   </form>
+  
 
-<form action="/members/{{member.id}}/delete" method="POST">
-    <input class="btn btn--danger" type="submit" value="Delete Member" />
-  </form>
+<form action="/members/{{member.id}}/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete Member?');">
+    <input class="action_button" type="submit" value="Delete Member"/>
+</form>
+</div>
+
+</div>
+
 {% endblock %}

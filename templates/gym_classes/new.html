@@ -2,20 +2,23 @@
 
 {% block content %}
 
+<div class="form_block">
+    <h1>New Gym Class</h1>
 <form action="/gym_classes" method="post">
 
-  <div>
-    <label for="class_name">Class Name:</label>
+    <label for="class_name">Class Name:</label><br>
     <input type="text" id="class_name" name="class_name" placeholder="Class Name" required autofocus>
-  </div>
+    <br><br>
 
-  <div>
-    <label for="description">Description:</label>
-    <input type="text" id="description" name="description" placeholder="Description" required autofocus>
-  </div>
 
-  <button type="submit">Submit</button>
+    <label for="description">Description:</label><br>
+    <textarea type="text" id="description" name="description" placeholder="Enter a Description" required autofocus rows="4" cols="50"></textarea>
+    <br>
+
+
+  <button class="action_button" type="submit">Submit</button>
 
 </form>
+</div>
 
 {% endblock %}

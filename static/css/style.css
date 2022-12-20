@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;700&display=swap');
+
+body {
+    margin: 0px;
+    background-color: brown;
+    color: azure;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 112.5%;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 500%;
+    text-align: center;
+}
+
+nav > ul {
+    background-color: white;
+}
+
+nav > ul > li {
+    display: inline-block;
+    padding: 10px;
+}
+
+nav a:link {
+    color: brown;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+nav a:visited {
+    color: brown;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+nav a:hover {
+    background-color: brown;
+    color: white;
+  }
+
+#landing {
+    display: flex;
+    justify-content: center;
+    
+}
+
+.content_block {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 60%;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.content_head {
+    color: black;
+}
+
+.content_block a:link {
+    color: brown;
+    background-color: transparent;
+  }
+  
+.content_block a:visited {
+    color: brown;
+    background-color: transparent;
+  }
+
+.content_block a:hover {
+    color: brown;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+.content_button {
+    background-color: brown;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.content_button:hover {
+    cursor: pointer
+}
+
+.bookings_block {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 60%;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.bookings_block > p {
+    margin-bottom: -1px;
+}
+
+.action_button {
+    margin-top: 30px;
+    background-color: brown;
+    border: 1px solid black;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+}
+
+.individual_block {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 60%;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.individual_block a:link {
+    color: brown;
+    background-color: transparent;
+}
+
+.individual_block a:visited {
+    color: brown;
+    background-color: transparent;
+}
+
+.individual_block a:hover {
+    color: brown;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+.edit_delete_buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px
+}
+
+.form_block {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 60%;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.booking_block {
+    background-color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 60%;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+#duplicate_warning {
+    background-color: yellow;
+    color: black;
+    font-weight: bolder;
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 60%;
+    padding-left: 15px;
+    border-radius: 15px;
+    border: 1px solid black;
+}

@@ -1,7 +1,17 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h1>The Gym</h1>
 
-<p>Lift heavy things. Run for ages. Take selfies. And for christ's sake have a shower, ya stink</p>
+<h4 id ="landing">Lift heavy things. Run for ages. Take selfies. And for christ's sake have a shower, ya stink</h4>
+
+<br>
+<div class="content_block">
+<h1 class="content_head">Upcoming Classes</h1>
+
+{% for gym_class in gym_classes %}
+
+    <a href="/gym_classes/{{gym_class.id}}">{{gym_class.class_name}}</a>
+
+{% endfor %}
+</div>
 {% endblock %}

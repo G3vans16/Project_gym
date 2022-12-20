@@ -1,25 +1,27 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="form_block">
+    <h1>Edit Member</h1>
 <form action="/members/{{member.id}}" method="post">
-  <div>
-    <label for="first_name">First Name:</label>
+
+    <label for="first_name">First Name:</label><br>
     <input type="text" id="first_name" name="first_name" placeholder="First Name" required autofocus>
-  </div>
+    <br><br>
 
-  <div>
-    <label for="last_name">Last Name:</label>
+
+    <label for="last_name">Last Name:</label><br>
     <input type="text" id="last_name" name="last_name" placeholder="Last Name" required autofocus>
-  </div>
+    <br><br>
 
-  <div>
-    <label for="age">Age:</label>
+    <label for="age">Age:</label><br>
     <input type="text" id="age" name="age" placeholder="Age" required>
-  </div>
+    <br><br>
 
-  <button type="submit">Confirm Changes</button>
+  <button class="action_button" type="submit">Confirm Changes</button>
 
 </form>
+</div>
 
 
 {% endblock %}

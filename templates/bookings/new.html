@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div class="booking_block">
 <h1>Create a Booking</h1>
 
 <form action="/bookings" method="POST">
@@ -9,17 +10,24 @@
         {% for member in members %}
         <option value="{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</option>
         {% endfor %}
-      </select>
+      </select><br>
     
     <label for="gym_class">Select a class:</label>
       <select name="gym_class_id" id="gym_class">
         {% for gym_class in gym_classes %}
         <option value="{{ gym_class.id }}">{{ gym_class.class_name }}</option>
         {% endfor %}
-      </select>
+      </select><br>    
 
-    <input type='submit' value="Submit Booking">
+    <input class="action_button" type='submit' value="Submit Booking">
 
 </form>
+</div>
+
+{% if duplicate_error == True %}
+
+<p id="duplicate_warning">Booking already exists</p>
+
+{% endif %}
 
 {% endblock %}

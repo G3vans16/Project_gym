@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gym</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body>
-    <nav>
+    <header>
+        <h1 class = logo>The Gym</h1>
+        <nav>
         <ul>
           <li>
             <a href="{{ url_for('home') }}">Home</a>
@@ -19,10 +23,11 @@
             <a href="/members">Members</a>
           </li>
           <li>
-            <a href="/bookings">Booking</a>
+            <a href="/bookings">Bookings</a>
           </li>
         </ul>
       </nav>
+    </header>
       <section id="content">
         {% block content %}
   
